@@ -47,4 +47,16 @@ class LinkedList
     @head = Node.new(surname, @head)
   end
 
+  def insert(position, surname)
+    if position == 0
+      prepend(surname)
+      return
+    end
+    parent = @head
+    (position - 1).times do
+      parent = parent.next_node
+    end
+    parent.next_node = Node.new(surname, parent.next_node)
+  end
+
 end
