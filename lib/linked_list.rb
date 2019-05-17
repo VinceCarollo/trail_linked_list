@@ -21,8 +21,8 @@ class LinkedList
   end
 
   def count
-    count = 0
-    count += 1 if !@head.nil?
+    return 0 if @head.nil?
+    count = 1
     pointer = @head
     until pointer.next_node.nil?
       count += 1
@@ -32,6 +32,7 @@ class LinkedList
   end
 
   def to_string
+    return 'none' if @head.nil?
     families = []
     families << "The #{@head.surname} family" if !@head.nil?
     pointer = @head

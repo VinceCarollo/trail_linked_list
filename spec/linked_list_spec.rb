@@ -36,4 +36,9 @@ RSpec.describe "linked list" do
     expect(@list.to_string).to eq(expected)
   end
 
+  it "won't break if not appended when calling methods" do
+    expect(@list.count).to eq(0)
+    expect(@list.to_string).to eq('none')
+  end
+
 end
