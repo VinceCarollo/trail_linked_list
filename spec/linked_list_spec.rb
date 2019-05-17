@@ -36,4 +36,29 @@ RSpec.describe "linked list" do
     expect(@list.to_string).to eq(expected)
   end
 
+  it "won't break if not appended when calling methods" do
+    expect(@list.count).to eq(0)
+    expect(@list.to_string).to eq('none')
+  end
+
+  it 'can prepend' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+    expected = "The McKinney family, followed by the Brooks family, followed by the Henderson family"
+    expect(@list.to_string).to eq(expected)
+    expect(@list.count).to eq(3)
+  end
+
+  it 'can insert node into given spot in list' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+    @list.insert(1, "Lawson")
+
+    expected = "The McKinney family, followed by the Lawson family, followed by the Brooks family, followed by the Henderson family"
+    expect(@list.to_string).to eq(expected)
+    expect(@list.count).to eq(4)
+  end
+
 end
