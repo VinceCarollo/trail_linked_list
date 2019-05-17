@@ -43,4 +43,8 @@ class LinkedList
     families.join
   end
 
+  def prepend(surname)
+    @head = Node.new(surname, @head)
+  end
+
 end
