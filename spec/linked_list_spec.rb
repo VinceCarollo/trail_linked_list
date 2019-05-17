@@ -41,4 +41,13 @@ RSpec.describe "linked list" do
     expect(@list.to_string).to eq('none')
   end
 
+  it 'can prepend' do
+    @list.append("Brooks")
+    @list.append("Henderson")
+    @list.prepend("McKinney")
+    expected = "The McKinney family, followed by the Brooks family, followed by the Henderson family"
+    expect(@list.to_string).to eq(expected)
+    expect(@list.count).to eq(3)
+  end
+
 end
